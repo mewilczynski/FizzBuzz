@@ -23,14 +23,14 @@ function post(url, score){
 }
 
 function formatUrl(url, user){
-  const apiLink = url + '?id=' + user;
+  const apiLink = url + user;
   sessionStorage.setItem("apiLink", apiLink);
 
   get(apiLink).then(function(response){
 
   if(response.status == 200){
-  sessionStorage.setItem("user", response.data.id);
-  sessionStorage.setItem("score", response.data.score);
+  sessionStorage.setItem("user", response.score.id);
+  sessionStorage.setItem("score", response.score.score);
   window.location.href = "mainpage.html";
   }
   else{
@@ -41,10 +41,13 @@ function formatUrl(url, user){
       });
 
   }
-
-  document.getElementById("displayUsername").value = sessionStorage.getItem("user");
-
   });
+}
+
+function initUserInfo(){
+  document.getElementById("displayUsername").innerhtml = sessionStorage.getItem("user");
+  document.getElementById("displayScore").innerhtml = sessionStorage.getItem("score");
+
 }
 
 function updateUserScore(){
@@ -58,19 +61,19 @@ function updateUserScore(){
 
   if(score % 5 == 0 && score % 3 == 0){
     //output fizzbuzz
-    document.getElementById("displayScore").value = "FizzBuzz";
+    document.getElementById("displayScore").innerhtml = "FizzBuzz";
   }
   else if(score % 5 == 0){
     //output Buzz
-    document.getElementById("displayScore").value = "Buzz";
+    document.getElementById("displayScore").innerhtml = "Buzz";
   }
   else if(score % 3 == 0){
     //output Fizz
-    document.getElementById("displayScore").value = "Fizz";
+    document.getElementById("displayScore").innerhtml = "Fizz";
   }
   else{
     //output just the number
-    document.getElementById("displayScore").value = score;
+    document.getElementById("displayScore").innerhtml = score;
   }
 
   sessionStorage.setItem("score", score);
