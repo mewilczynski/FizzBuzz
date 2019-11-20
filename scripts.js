@@ -54,7 +54,8 @@ function updateUserScore(){
 
   //get our stored values
   const apiLink = sessionStorage.getItem("apiLink");
-  var score = sessionStorage.getItem("score");
+  var temp = sessionStorage.getItem("score");
+  var score = parseInt(temp, 10);
 
   //increment score
   score += 1;
