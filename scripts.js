@@ -45,8 +45,8 @@ function formatUrl(url, user){
 }
 
 function initUserInfo(){
-  document.getElementById("displayUsername").innerhtml = sessionStorage.getItem("user");
-  document.getElementById("displayScore").innerhtml = sessionStorage.getItem("score");
+  document.getElementById("displayUsername").textContent = sessionStorage.getItem("user");
+  document.getElementById("displayScore").textContent = sessionStorage.getItem("score");
 
 }
 
@@ -62,19 +62,19 @@ function updateUserScore(){
 
   if(score % 5 == 0 && score % 3 == 0){
     //output fizzbuzz
-    document.getElementById("displayScore").innerhtml = "FizzBuzz";
+    document.getElementById("displayScore").textContent = "FizzBuzz";
   }
   else if(score % 5 == 0){
     //output Buzz
-    document.getElementById("displayScore").innerhtml = "Buzz";
+    document.getElementById("displayScore").textContent = "Buzz";
   }
   else if(score % 3 == 0){
     //output Fizz
-    document.getElementById("displayScore").innerhtml = "Fizz";
+    document.getElementById("displayScore").textContent = "Fizz";
   }
   else{
     //output just the number
-    document.getElementById("displayScore").innerhtml = score;
+    document.getElementById("displayScore").textContent = score;
   }
 
   sessionStorage.setItem("score", score);
