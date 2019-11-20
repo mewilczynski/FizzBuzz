@@ -11,21 +11,24 @@
                     margin: 0 0 2rem 0 !important;
                 }
 
+                btn {
+                    color: seashell !important;
+                    background-color: #668eee !important;
+                }
 
         </style>
     </head>
-    <body onload="initUserInfo()">
+    <body onload="displayUserInfo()">
 
-
-        <h1>Welcome, </h1><h1 id="displayUsername">mm</h1><h1>!</h1>
+        <h1 id="displayUsername"></h1>
 
         <div id="fizzBuzzGame">
-            <div id="outputText">
-                <p>Your current FizzBuzz value is: </p><p id="displayScore">0</p>
-            </div>
+            <span id="outputText" "clear: both;">
+                <p>Your current FizzBuzz value is: </p><p id="displayScore"></p>
+            </span>
 
             <div id="incrementBtn">
-                <input type="button" value="click to increment" onclick="updateUserScore()">
+                <button type="button" class="btn" onclick="updateUserScore()">click to increment</button>
             </div>
         </div>
 
