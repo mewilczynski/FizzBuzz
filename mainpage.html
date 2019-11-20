@@ -11,9 +11,20 @@
                     margin: 0 0 2rem 0 !important;
                 }
 
-                btn {
+                #incrementBtn {
                     color: seashell !important;
                     background-color: #668eee !important;
+                    border-radius: 15px;
+                    margin: 2rem;
+                    padding: 10px;
+
+                }
+
+                #displayScore {
+                    background-color: #668eee !important;
+                    border-radius: 5px;
+                    padding: 3px;
+
                 }
 
         </style>
@@ -23,12 +34,12 @@
         <h1 id="displayUsername"></h1>
 
         <div id="fizzBuzzGame">
-            <span id="outputText" "clear: both;">
-                <p>Your current FizzBuzz value is: </p><p id="displayScore"></p>
-            </span>
+            <div id="outputText" "clear: both;">
+                Your current FizzBuzz value is: <span id="displayScore" style="width: 100px !important;"></span>
+            </div>
 
-            <div id="incrementBtn">
-                <button type="button" class="btn" onclick="updateUserScore()">click to increment</button>
+            <div>
+                <button id="incrementBtn" type="button" class="btn" onclick="updateUserScore()">click to increment</button>
             </div>
         </div>
 
