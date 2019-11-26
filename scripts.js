@@ -43,6 +43,8 @@ function getUserInfo(url, user){
       // get didn't work, post new user to database
       post(apiLink, { score: 0 }).then(function(response){
         if(response.status == 200 || response.status == 201){
+          sessionStorage.setItem("user", response.score.id);
+          sessionStorage.setItem("score", response.score.score);
           window.location.href = "mainpage.html";
         }
       });
